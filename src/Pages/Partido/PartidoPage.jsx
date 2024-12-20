@@ -9,11 +9,10 @@ const PartidoPage = () => {
         Partidos Políticos
       </Typography>
       <Typography variant="subtitle" component="div" sx={{ mb: "1rem" }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, suscipit?
-        Corporis sapiente possimus, quis ad doloribus culpa reiciendis eius rem,
-        deleniti perspiciatis nisi a porro ut aliquam cumque tempora
-        exercitationem.
-          Partidos Políticos. Página de teste.
+        O partido político, pessoa jurídica de direito privado, destina-se a
+        assegurar, no interesse do regime democrático, a autenticidade do
+        sistema representativo e a defender os direitos fundamentais definidos
+        na Constituição Federal.
       </Typography>
       <PartidoList />
     </Container>
