@@ -1,6 +1,4 @@
-import { Button, Typography } from "@mui/material";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+import { Typography, Box, TextField } from "@mui/material";
 import * as React from "react";
 import { ROOT_URL_API } from "../../Api";
 import Error from "../../Components/Error";
@@ -10,6 +8,7 @@ import PartidoListItem from "./PartidoListItem";
 
 export default function PartidoList() {
   const { data, error, loading, request } = useFetch();
+  const [filtro, setFiltro] = React.useState("");
 
   React.useEffect(() => {
     const url = ROOT_URL_API + "/partidos";
@@ -20,9 +19,18 @@ export default function PartidoList() {
     getData();
   }, []);
 
+  const handleFiltroChange = (event) => {
+    setFiltro(event.target.value.toLowerCase());
+  };
+
   if (error) return <Error message={error} />;
   if (loading) return <MyLinearProgress />;
-  if (data)
+
+  if (data) {
+    const partidosFiltrados = data.dados.filter((partido) =>
+      partido.nome.toLowerCase().includes(filtro)
+    );
+
     return (
       <>
         <Typography component="div">Filtro:</Typography>
@@ -37,13 +45,17 @@ export default function PartidoList() {
           noValidate
           autoComplete="off"
         >
-          <TextField id="outlined-basic" label="Nome" variant="outlined" />
+          <TextField
+            id="outlined-basic"
+            label="Nome"
+            variant="outlined"
+            value={filtro}
+            onChange={handleFiltroChange}
+          />
         </Box>
 
-        <Button variant="contained">Pesquisar</Button>
-
         <Box component="div" sx={{ my: 2 }}>
-          {data.dados.map((partido) => (
+          {partidosFiltrados.map((partido) => (
             <PartidoListItem
               key={partido.id}
               partidoId={partido.id}
@@ -52,7 +64,10 @@ export default function PartidoList() {
             />
           ))}
         </Box>
-        <span>Total: {data.dados.length}</span>
+        <span>Total: {partidosFiltrados.length}</span>
       </>
     );
+  }
+
+  return null;
 }
