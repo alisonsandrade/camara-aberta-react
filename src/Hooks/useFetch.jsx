@@ -9,7 +9,7 @@ const useFetch = () => {
     try {
       setError(null);
       setLoading(true);
-
+      
       const response = await fetch(url, options);
       const json = await response.json();
 
