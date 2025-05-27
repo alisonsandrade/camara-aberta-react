@@ -40,7 +40,7 @@ const Home = () => {
         <Box sx={{ flexGrow: 1, my: "1rem" }}>
           <Grid container spacing={2}>
             {cards.map((card, index) => (
-              <Grid key={index} item lg={4} md={6} xs={12}>
+              <Grid key={index} size={{xs:12, md: 6, lg:4}}>
                 <MyCard
                   path={card.path}
                   image={card.image}

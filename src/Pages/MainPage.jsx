@@ -28,8 +28,8 @@ const MainPage = () => {
       
       <Box component="footer" sx={{ py: 3, px: 2, mt: 'auto', backgroundColor: '#f5f5f5' }}>
         <Container maxWidth="lg">
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={4}>
+          <Grid container spacing={2}>
+            <Grid size={{ xs:12, md:4 }}>
               <Typography variant="h6" gutterBottom>
                 About Us
               </Typography>
@@ -37,7 +37,7 @@ const MainPage = () => {
                 We are a modern company focused on delivering the best user experience.
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid size={{ xs:12, md:4 }}>
               <Typography variant="h6" gutterBottom>
                 Contact
               </Typography>
@@ -48,7 +48,7 @@ const MainPage = () => {
                 Phone: +123 456 7890
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid size={{ xs:12, md:4 }}>
               <Typography variant="h6" gutterBottom>
                 Follow Us
               </Typography>
