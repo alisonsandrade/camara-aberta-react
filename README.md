@@ -14,9 +14,17 @@ O projeto tem por objetivo geral a construção de um sistema Web para consumo d
 
 ## Instalação
 
-# Clone o repositório
+- Clone o repositório
+```bash
 git clone https://github.com/alisonsandrade/camara-aberta-react.git
+```
 
-# Instale a app. Para isso, certifique-se de que o NodeJS está instalado em sua máquina
+- Instale a app. Para isso, certifique-se de que o NodeJS está instalado em sua máquina
+```bash
 npm install
 npm run dev
+```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
