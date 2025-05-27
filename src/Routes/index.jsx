@@ -3,6 +3,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import PartidoPage from "../Pages/Partido/PartidoPage";
 import ProposicaoPage from "../Pages/Proposicao/ProposicaoPage";
+import TemaDetails from "../Pages/Proposicao/TemaDetails";
 import TemaPage from "../Pages/Proposicao/TemaPage";
 
 const routes = [
@@ -27,6 +28,10 @@ const routes = [
         path: "proposicoes/temas/:codTema",
         element: <TemaPage />,
       },
+      {
+        path: "proposicoes/detalhes/:idProposicao",
+        element: <TemaDetails />,
+      }
     ],
   },
 ];
