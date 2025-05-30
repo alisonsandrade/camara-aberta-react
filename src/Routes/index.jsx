@@ -6,6 +6,10 @@ import PartidoDetails from "../Pages/Partido/PartidoDetails";
 import ProposicaoPage from "../Pages/Proposicao/ProposicaoPage";
 import TemaDetails from "../Pages/Proposicao/TemaDetails";
 import TemaPage from "../Pages/Proposicao/TemaPage";
+import LegislaturaPage from "../Pages/Deputado/LegislaturaPage";
+import LegislaturaDetails from "../Pages/Deputado/LegislaturaDetails";
+import DeputadoList from "../Pages/Deputado/DeputadoList";
+import DeputadoDetails from "../Pages/Deputado/DeputadoDetails";
 
 const routes = [
   {
@@ -36,6 +40,22 @@ const routes = [
       {
         path: "proposicoes/detalhes/:idProposicao",
         element: <TemaDetails />,
+      },
+      {
+        path: "legislaturas",
+        element: <LegislaturaPage />
+      },
+      {
+        path: "legislaturas/:id",
+        element: <LegislaturaDetails />
+      },
+      {
+        path: "legislaturas/:idLegislatura/deputados",
+        element: <DeputadoList />
+      },
+      {
+        path: "legislaturas/:idLegislatura/deputados/:idDeputado",
+        element: <DeputadoDetails />
       }
     ],
   },
