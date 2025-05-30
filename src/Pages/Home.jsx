@@ -7,7 +7,7 @@ import MyCard from "../Components/MyCard";
 
 const cards = [
   {
-    path: "/deputados",
+    path: "/legislaturas",
     image: deputados,
     name: "Deputados",
     description:
@@ -21,7 +21,7 @@ const cards = [
       "O partido político, pessoa jurídica de direito privado, destina-se a assegurar, no interesse do regime democrático, a autenticidade do sistema representativo e a defender os direitos fundamentais definidos na Constituição Federal.",
   },
   {
-    path: "proposicoes",
+    path: "/proposicoes",
     image: projetoLei,
     name: "Proposição Legislativa",
     description:
