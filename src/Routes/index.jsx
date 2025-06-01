@@ -10,6 +10,7 @@ import LegislaturaPage from "../Pages/Deputado/LegislaturaPage";
 import LegislaturaDetails from "../Pages/Deputado/LegislaturaDetails";
 import DeputadoList from "../Pages/Deputado/DeputadoList";
 import DeputadoDetails from "../Pages/Deputado/DeputadoDetails";
+import AboutPage from "../Pages/AboutPage";
 
 const routes = [
   {
@@ -20,6 +21,10 @@ const routes = [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/sobre",
+        element: <AboutPage />
       },
       {
         path: "partidos",
