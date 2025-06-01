@@ -36,7 +36,10 @@ export default function DeputadoCard({ id, nome, siglaPartido, siglaUf, urlFoto,
               <Avatar
                 alt={nome}
                 src={urlFoto}
-                sx={{ width: 64, height: 64, referrerPolicy: "no-referrer" }}
+                sx={{ width: 64, height: 64 }}
+                slotProps={{
+                  img: { referrerPolicy: 'no-referrer' }
+                }}
               />
             </Grid>
             <Grid size={{ xs: 6 }}>

@@ -117,7 +117,10 @@ export default function LegislaturaDetails() {
                           alt={deputado.nome}
                           src={deputado.urlFoto}
                           sx={{ width: 64, height: 64, referrerPolicy: "no-referrer" }}
-                        />
+                          slotProps={{
+                            img: { referrerPolicy: 'no-referrer' }
+                          }}
+                        />                        
                       </Grid>
                       <Grid>
                         <Typography variant="h6">{deputado.nome}</Typography>
