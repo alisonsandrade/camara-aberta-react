@@ -13,7 +13,7 @@ import {
   IconButton
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import { PROPOSICOES_URL_API } from "../../Api";
 import MyLinearProgress from "../../Components/MyLinearProgress";
@@ -26,6 +26,7 @@ function TemaPage() {
   const { data, error, loading, request } = useFetch();
   const [temaNome, setTemaNome] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate()
 
   function getCurrentPage() {
     const currentPage = searchParams.get("pagina");
@@ -117,7 +118,11 @@ function TemaPage() {
             </Box>            
           </CardContent>
           <CardActions>
-            <Button size="small" href={`/proposicoes/detalhes/${proposicao.id}?redirecionar=${encodeURIComponent(window.location.href)}`}>Detalhar</Button>
+            <Button 
+              size="small"
+              onClick={() => navigate(`/proposicoes/detalhes/${proposicao.id}?redirecionar=${encodeURIComponent(window.location.href)}`)}>
+                Detalhar
+            </Button>
           </CardActions>
         </Card>
       ))}
