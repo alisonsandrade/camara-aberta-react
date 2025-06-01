@@ -31,26 +31,26 @@ const MainPage = () => {
           <Grid container spacing={2}>
             <Grid size={{ xs:12, md:4 }}>
               <Typography variant="h6" gutterBottom>
-                About Us
+                Sobre
               </Typography>
               <Typography variant="body2" color="textSecondary">
-                We are a modern company focused on delivering the best user experience.
+                O <b>SISCA - Câmara Aberta React</b> é um sistema web desenvolvido em JavaScript que visa democratizar o acesso à informação, oferecendo uma interface pública e gratuita para explorar os dados da API de Dados Abertos da Câmara. Nosso objetivo é promover a transparência e a acessibilidade das informações legislativas para todos os cidadãos.
               </Typography>
             </Grid>
             <Grid size={{ xs:12, md:4 }}>
               <Typography variant="h6" gutterBottom>
-                Contact
+                Contatos
               </Typography>
               <Typography variant="body2" color="textSecondary">
-                Email: info@modernapp.com
+                E-mail: <a href="mailto:seu_email@dominio.com">alison.sandrade@hotmail.com</a>
               </Typography>
               <Typography variant="body2" color="textSecondary">
-                Phone: +123 456 7890
+                GitHub do Projeto: <a href="https://github.com/alisonsandrade/camara-aberta-react" target="_blank" rel="noopener noreferrer">SISCA - Câmara Aberta React</a>
               </Typography>
             </Grid>
             <Grid size={{ xs:12, md:4 }}>
               <Typography variant="h6" gutterBottom>
-                Follow Us
+                Redes Sociais
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                 <IconButton color="primary" href="https://facebook.com/alisonsandrade">                  
@@ -71,7 +71,7 @@ const MainPage = () => {
 
           <Box sx={{ mt: 3, textAlign: 'center' }}>
             <Typography variant="body2" color="textSecondary">
-              &copy; {new Date().getFullYear()} My Modern App. All rights reserved.
+              &copy; {new Date().getFullYear()} SISCA - Sistema Câmara Aberta.
             </Typography>
           </Box>
         </Container>
