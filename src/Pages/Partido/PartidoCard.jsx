@@ -49,7 +49,7 @@ function PartidoCard({ partidoId, nome, sigla, uri }) {
         >
         <Box sx={{ p: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: { sm: 120 } }}>
             {data.dados.urlLogo ? (
-            <Avatar alt={nome} src={data.dados.urlLogo} sx={{ width: 80, height: 80, border: `1px solid ${theme.palette.divider}` }} />
+            <Avatar alt={nome} src={data.dados.urlLogo} sx={{ referrerPolicy: "no-referrer", width: 80, height: 80, border: `1px solid ${theme.palette.divider}` }} />
             ) : (
             <Avatar sx={{ width: 80, height: 80, bgcolor: theme.palette.primary.light }}>
                 <Typography variant="h5" color="white">{sigla}</Typography>

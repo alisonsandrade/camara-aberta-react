@@ -116,7 +116,7 @@ export default function LegislaturaDetails() {
                         <Avatar
                           alt={deputado.nome}
                           src={deputado.urlFoto}
-                          sx={{ width: 64, height: 64 }}
+                          sx={{ width: 64, height: 64, referrerPolicy: "no-referrer" }}
                         />
                       </Grid>
                       <Grid>

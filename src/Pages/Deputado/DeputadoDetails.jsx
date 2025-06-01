@@ -102,7 +102,7 @@ export default function DeputadoDetails() {
             <Avatar
               alt={deputado.nomeCivil || ultimoStatus?.nomeEleitoral}
               src={ultimoStatus?.urlFoto}
-              sx={{ width: 120, height: 120, border: `2px solid ${theme.palette.primary.main}` }}
+              sx={{ width: 120, height: 120, border: `2px solid ${theme.palette.primary.main}`, referrerPolicy: "no-referrer" }}
             />
           </Grid>
           <Grid>

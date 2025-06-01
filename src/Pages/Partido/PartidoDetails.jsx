@@ -83,7 +83,8 @@ function PartidoDetails() {
             flexShrink: 0,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            referrerPolicy: "no-referrer"
           }}
         >
           {!data.dados.urlLogo && (data.dados.sigla || data.dados.nome?.charAt(0))}
@@ -132,7 +133,7 @@ function PartidoDetails() {
                   <Avatar
                     src={data.dados.status.lider.urlFoto}
                     alt={data.dados.status.lider.nome}
-                    sx={{ width: 100, height: 100, flexShrink: 0, border: `1px solid ${theme.palette.divider}` }}
+                    sx={{ width: 100, height: 100, flexShrink: 0, border: `1px solid ${theme.palette.divider}`, referrerPolicy: "no-referrer" }}
                   >
                     {!data.dados.status.lider.urlFoto && <PersonIcon sx={{ fontSize: 50 }} />}
                   </Avatar>

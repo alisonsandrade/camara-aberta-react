@@ -87,7 +87,7 @@ function Membros({ partidoId }) {
                   <React.Fragment key={membro.id+index}>
                     <ListItem sx={{ py: 1.5 }}>
                       <ListItemIcon>
-                        <Avatar alt={membro.nome} src={membro.urlFoto} sx={{ width: 56, height: 56 }}>
+                        <Avatar alt={membro.nome} src={membro.urlFoto} sx={{ width: 56, height: 56, referrerPolicy: "no-referrer" }}>
                           {!membro.urlFoto && <PersonIcon />}
                         </Avatar>
                       </ListItemIcon>
