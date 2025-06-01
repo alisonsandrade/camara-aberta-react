@@ -1,6 +1,5 @@
 import { 
-  Box, 
-  Button, 
+  Box,
   TextField, 
   Typography, 
   Container, 
@@ -80,7 +79,7 @@ function ProposicaoList() {
 
           <Box component="form" noValidate autoComplete="off" sx={{ mt: 3 }}>
             <Grid container spacing={2} alignItems="flex-end">
-              <Grid item xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <TextField
                   fullWidth
                   id="search-tema"

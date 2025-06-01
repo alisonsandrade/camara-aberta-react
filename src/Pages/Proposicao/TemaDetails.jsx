@@ -49,7 +49,6 @@ function ProposicaoDetalhes() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  // Formatar data para exibição
   const formatDate = (dateString) => {
     if (!dateString) return "Data não disponível";
     const date = new Date(dateString);
@@ -62,10 +61,8 @@ function ProposicaoDetalhes() {
     }).format(date);
   };
 
-  // Copiar para área de transferência
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    // Aqui você poderia adicionar um feedback visual como um snackbar
   };
 
   useEffect(() => {
@@ -92,19 +89,16 @@ function ProposicaoDetalhes() {
   const proposicao = data.dados;
   const status = proposicao.statusProposicao;
 
-  // Paginação
   const handleChangePage = (event, newPage) => {
     setCurrentPage(newPage);
   };
 
-  // Ordenar tramitações em ordem decrescente
   const sortedTramitacoes = tramitacoesData ? [...tramitacoesData.dados].sort((a, b) => new Date(b.dataHora) - new Date(a.dataHora)) : [];
   
   const paginatedTramitacoes = sortedTramitacoes.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <Container maxWidth="lg" sx={{ py: 2 }}>
-      {/* Botão Voltar */}
       <Button
         component={Link}
         to={searchParams.get('redirecionar')}
@@ -175,8 +169,7 @@ function ProposicaoDetalhes() {
       </Paper>
 
       <Grid container spacing={2}>
-        {/* Informações Principais */}
-        <Grid item xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <Card sx={{ borderRadius: 2, height: '100%', boxShadow: theme.shadows }}>
             <CardContent>
               <Typography variant="h6" color="primary" gutterBottom>
@@ -224,8 +217,7 @@ function ProposicaoDetalhes() {
           </Card>
         </Grid>
 
-        {/* Status e Informações Adicionais */}
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ borderRadius: 2, boxShadow: theme.shadows, mb: 3 }}>
             <CardContent>
               <Typography variant="h6" color="primary" gutterBottom>
@@ -350,7 +342,6 @@ function ProposicaoDetalhes() {
         </Grid>
       </Grid>
 
-      {/* Tramitações */}
       <Typography variant="h5" component="div" gutterBottom sx={{ mt: 4 }}>
         Tramitações
       </Typography>
@@ -360,7 +351,7 @@ function ProposicaoDetalhes() {
         <>
           <Grid container spacing={1}>
             {paginatedTramitacoes.map((tramitacao, index) => (
-              <Grid item xs={12} key={index}>
+              <Grid size={{ xs: 12 }} key={index}>
                 <Card sx={{ borderRadius: 2, boxShadow: theme.shadows, position: 'relative' }}>
                   <CardContent>
                     <Typography variant="h6" color="primary" gutterBottom>

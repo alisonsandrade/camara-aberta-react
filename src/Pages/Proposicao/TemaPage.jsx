@@ -27,27 +27,23 @@ function TemaPage() {
   const [temaNome, setTemaNome] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Obtém a página atual dos parâmetros de URL
   function getCurrentPage() {
     const currentPage = searchParams.get("pagina");
     if (isNaN(currentPage) || !currentPage) return 1;
     return parseInt(currentPage);
   }
 
-  // Obtém a última página disponível
   function getLastPage(array) {
     const link = array.find((link) => link.rel === "last");
     if (link) return parseInt(new URLSearchParams(link.href).get("pagina"));
     return 1;
   }
 
-  // Carrega os dados quando a página muda
   useEffect(() => {
     async function fetchData() {
       const currentPage = getCurrentPage();
       const url = `${PROPOSICOES_URL_API}?codTema=${params.codTema}&ordem=ASC&ordenarPor=id&pagina=${currentPage}&itens=15`;
       await request(url);
-      // Armazena o nome do tema se disponível
       const tema = searchParams.get("tema");
       if (tema) setTemaNome(tema);
     }
@@ -55,7 +51,6 @@ function TemaPage() {
     fetchData();
   }, [searchParams, params.codTema, request]);
 
-  // Componente para exibir mensagem de erro
   const Error = ({ message }) => (
     <Container maxWidth="xl">
       <Typography variant="h5" color="error" sx={{ mt: 4, textAlign: "center" }}>
@@ -64,12 +59,10 @@ function TemaPage() {
     </Container>
   );
 
-  // Renderiza o componente conforme o estado
   if (error) return <Error message={error} />;
   if (loading) return <MyLinearProgress />;
   if (!data) return <CircularProgress sx={{ display: "block", margin: "0 auto", mt: 4 }} />;
 
-  // Filtra as proposições com base na consulta de pesquisa
   const filteredProposicoes = data.dados.filter((proposicao) =>
     proposicao.ementa.toLowerCase().includes(searchQuery.toLowerCase()) ||
     proposicao.numero.toString().includes(searchQuery) ||
@@ -82,7 +75,6 @@ function TemaPage() {
         Tema: {temaNome || `#${params.codTema}`}
       </Typography>
 
-      {/* Componente de busca automática */}
       <Box sx={{ my: 2 }}>
         <TextField
           fullWidth
