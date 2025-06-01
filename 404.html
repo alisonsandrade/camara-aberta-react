@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecionando para a aplicação...</title>
+    <script>
+      // O nome do seu repositório GitHub, DEVE ser EXATO!
+      const REPO_NAME = 'camara-aberta-react'; 
+      
+      // Obtém o caminho base da URL atual
+      // Ex: se a URL é 'https://alisonsandrade.github.io/camara-aberta-react/legislaturas',
+      // o basePath final deve ser '/camara-aberta-react/'
+      let basePath = '/';
+      const pathSegments = window.location.pathname.split('/');
+      const repoIndex = pathSegments.indexOf(REPO_NAME);
+      if (repoIndex !== -1) {
+        basePath = '/' + pathSegments.slice(1, repoIndex + 1).join('/') + '/';
+      }
+
+      // Constrói o caminho completo que o React Router deve ver
+      // Isso inclui o caminho original que causou o 404
+      const fullRedirectPath = window.location.pathname + window.location.search + window.location.hash;
+
+      // Armazena o caminho original na sessionStorage para o React App ler
+      sessionStorage.setItem('redirect_path', fullRedirectPath);
+
+      // Redireciona o navegador para a raiz da sua aplicação no GitHub Pages
+      // Isso força o carregamento do seu index.html com o basename correto na URL
+      window.location.replace(basePath);
+    </script>
+  </head>
+  <body>
+    <p>Aguarde, redirecionando para a aplicação...</p>
+  </body>
+</html>
