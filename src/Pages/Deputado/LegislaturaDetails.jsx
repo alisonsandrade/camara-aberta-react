@@ -9,7 +9,8 @@ import {
   alpha,
   Grid,
   Avatar,
-  Button
+  Button,
+  CardActionArea
 } from "@mui/material";
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -78,7 +79,7 @@ export default function LegislaturaDetails() {
               }
             }}
           >
-            LISTAGEM DE DEPUTADOS
+            LISTAGEM DOS DEPUTADOS
           </Button>
         </Box>
       </Paper>
@@ -100,37 +101,39 @@ export default function LegislaturaDetails() {
                   flexDirection: 'column',
                 }}
               >
-                <CardContent
-                  sx={{
-                    flexGrow: 1, 
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    minHeight: 180, 
-                  }}
-                >
-                  <Grid container spacing={2} alignItems="center">
-                    <Grid>
-                      <Avatar
-                        alt={deputado.nome}
-                        src={deputado.urlFoto}
-                        sx={{ width: 64, height: 64 }}
-                      />
+                <CardActionArea onClick={() => navigate(`/legislaturas/${idLegislatura}/deputados/${deputado.id}`)} >
+                  <CardContent
+                    sx={{
+                      flexGrow: 1, 
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      minHeight: 180, 
+                    }}
+                  >
+                    <Grid container spacing={2} alignItems="center">
+                      <Grid>
+                        <Avatar
+                          alt={deputado.nome}
+                          src={deputado.urlFoto}
+                          sx={{ width: 64, height: 64 }}
+                        />
+                      </Grid>
+                      <Grid>
+                        <Typography variant="h6">{deputado.nome}</Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {deputado.siglaPartido} - {deputado.siglaUf}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {deputado.titulo}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {`Período: ${formatDate(deputado.dataInicio)} - ${formatDate(deputado.dataFim)}`}
+                        </Typography>
+                      </Grid>
                     </Grid>
-                    <Grid>
-                      <Typography variant="h6">{deputado.nome}</Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {deputado.siglaPartido} - {deputado.siglaUf}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {deputado.titulo}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {`Período: ${formatDate(deputado.dataInicio)} - ${formatDate(deputado.dataFim)}`}
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </CardContent>
+                  </CardContent>
+                </CardActionArea>
               </Card>
             </Grid>
           ))
