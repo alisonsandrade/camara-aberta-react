@@ -120,7 +120,7 @@ function TemaPage() {
           <CardActions>
             <Button 
               size="small"
-              onClick={() => navigate(`/proposicoes/detalhes/${proposicao.id}?redirecionar=${encodeURIComponent(window.location.href)}`)}>
+              onClick={() => navigate(`/proposicoes/detalhes/${proposicao.id}?redirecionar=${encodeURIComponent(window.location.hash)}`)}>
                 Detalhar
             </Button>
           </CardActions>

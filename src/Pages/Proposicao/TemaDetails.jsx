@@ -65,6 +65,27 @@ function ProposicaoDetalhes() {
     navigator.clipboard.writeText(text);
   };
 
+  /** Lógica para o botão de retornar */
+  const redirectToParam = searchParams.get('redirecionar');
+  let pathToReturn = '/'; // Caminho padrão de fallback
+
+  if (redirectToParam) {
+    try {
+      const decodedHash = decodeURIComponent(redirectToParam);
+      pathToReturn = decodedHash.substring(1) || '/'; // Remove o '#' inicial
+      
+      if (pathToReturn !== '/' && !pathToReturn.startsWith('/')) {
+        pathToReturn = '/' + pathToReturn;
+      }
+
+    } catch (e) {
+      console.warn("Erro ao processar URL de redirecionamento para o botão 'Voltar':", redirectToParam, e);
+      pathToReturn = '/'; // Fallback para a raiz em caso de erro na URL
+    }
+  }
+
+  /** */
+
   useEffect(() => {
     async function fetchProposicaoDetails() {
       const url = `${PROPOSICOES_URL_API}/${params.idProposicao}`;
@@ -101,7 +122,7 @@ function ProposicaoDetalhes() {
     <Container maxWidth="lg" sx={{ py: 2 }}>
       <Button
         component={Link}
-        to={searchParams.get('redirecionar')}
+        to={pathToReturn}
         startIcon={<KeyboardBackspaceIcon />}
         sx={{ mb: 3 }}
         color="primary"
