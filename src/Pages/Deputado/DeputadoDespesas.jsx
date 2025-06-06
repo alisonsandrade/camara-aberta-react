@@ -196,7 +196,7 @@ export default function DeputadoDespesas({ idDeputado, idLegislatura }) {
                         </Grid>
                         {despesa.urlDocumento && (
                           <Grid size={{ xs:12 }}>
-                            <MuiLink href={despesa.urlDocumento} target="_blank" rel="noopener" underline="hover" sx={{ display: 'block', mt: 0.5 }}>
+                            <MuiLink href={despesa.urlDocumento} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ display: 'block', mt: 0.5 }}>
                               Ver Documento
                             </MuiLink>
                           </Grid>

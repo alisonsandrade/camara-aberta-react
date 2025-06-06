@@ -111,10 +111,10 @@ function PartidoDetails() {
               </Typography>
               <InfoItem icon={LooksOneIcon} label="Número Eleitoral" value={data.dados.numeroEleitoral} />
               {data.dados.urlWebSite && (
-                <InfoItem icon={PublicIcon} label="Site" value={<MuiLink href={data.dados.urlWebSite} target="_blank" rel="noopener">{data.dados.urlWebSite}</MuiLink>} />
+                <InfoItem icon={PublicIcon} label="Site" value={<MuiLink href={data.dados.urlWebSite} target="_blank" rel="noopener noreferrer">{data.dados.urlWebSite}</MuiLink>} />
               )}
               {data.dados.urlFacebook && (
-                <InfoItem icon={FacebookIcon} label="Facebook" value={<MuiLink href={data.dados.urlFacebook} target="_blank" rel="noopener">{data.dados.urlFacebook}</MuiLink>} />
+                <InfoItem icon={FacebookIcon} label="Facebook" value={<MuiLink href={data.dados.urlFacebook} target="_blank" rel="noopener noreferrer">{data.dados.urlFacebook}</MuiLink>} />
               )}
               <InfoItem icon={EventAvailableIcon} label="Situação" value={data.dados.status?.situacao} />
               <InfoItem icon={CalendarTodayIcon} label="Data do Status" value={data.dados.status?.data && new Date(data.dados.status.data).toLocaleDateString()} />

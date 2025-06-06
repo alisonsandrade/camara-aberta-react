@@ -119,7 +119,7 @@ export default function DeputadoFrentes({ idDeputado }) {
                           {`Legislatura: ${frente.idLegislatura || 'Não disponível'}`}
                         </Typography>
                         {frente.uri && (
-                          <MuiLink href={frente.uri} target="_blank" rel="noopener" underline="hover" sx={{ display: 'block', mt: 0.5 }}>
+                          <MuiLink href={frente.uri} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ display: 'block', mt: 0.5 }}>
                             Ver Detalhes da Frente
                           </MuiLink>
                         )}

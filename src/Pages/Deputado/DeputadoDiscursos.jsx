@@ -143,12 +143,12 @@ export default function DeputadoDiscursos({ idDeputado, idLegislatura }) {
                         )}
                         <Box sx={{ mt: 1 }}>
                           {discurso.urlAudio && (
-                            <MuiLink href={discurso.urlAudio} target="_blank" rel="noopener" underline="hover" sx={{ mr: 2 }}>
+                            <MuiLink href={discurso.urlAudio} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ mr: 2 }}>
                               Ouvir Áudio
                             </MuiLink>
                           )}
                           {discurso.urlVideo && (
-                            <MuiLink href={discurso.urlVideo} target="_blank" rel="noopener" underline="hover">
+                            <MuiLink href={discurso.urlVideo} target="_blank" rel="noopener noreferrer" underline="hover">
                               Ver Vídeo
                             </MuiLink>
                           )}

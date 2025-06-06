@@ -202,7 +202,7 @@ export default function DeputadoEventos({ idDeputado }) {
                           </Box>
                         )}
                         {evento.urlRegistro && (
-                          <MuiLink href={evento.urlRegistro} target="_blank" rel="noopener" underline="hover" sx={{ display: 'block', mt: 1 }}>
+                          <MuiLink href={evento.urlRegistro} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ display: 'block', mt: 1 }}>
                             Ver Registro do Evento
                           </MuiLink>
                         )}

@@ -160,7 +160,7 @@ export default function DeputadoOrgaos({ idDeputado }) {
                           </Typography>
                         </Box>
                         {orgao.uriOrgao && (
-                          <MuiLink href={orgao.uriOrgao} target="_blank" rel="noopener" underline="hover" sx={{ display: 'block', mt: 0.5 }}>
+                          <MuiLink href={orgao.uriOrgao} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ display: 'block', mt: 0.5 }}>
                             Ver Detalhes do Órgão
                           </MuiLink>
                         )}
