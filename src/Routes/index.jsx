@@ -1,3 +1,5 @@
+import { createHashRouter } from "react-router-dom"
+
 import App from "../App";
 import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
@@ -12,7 +14,7 @@ import DeputadoList from "../Pages/Deputado/DeputadoList";
 import DeputadoDetails from "../Pages/Deputado/DeputadoDetails";
 import AboutPage from "../Pages/AboutPage";
 
-const routes = [
+const routesConfig = [
   {
     path: "/",
     element: <App />,
@@ -66,4 +68,6 @@ const routes = [
   },
 ];
 
-export default routes;
+const router = createHashRouter(routesConfig)
+
+export default router;
